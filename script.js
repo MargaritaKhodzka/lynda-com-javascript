@@ -1,15 +1,24 @@
-const MYCONSTANT = 5;
-MYCONSTANT = 3; // TypeError
+// let course = new Object();
 
-function logScope() {
-  let localVar = 2;
-  if (localVar) {
-    // block scope
-    let localVar = "I'm different!";
-    console.log('nested localVar: ', localVar); // I'm different!
+// course.title = 'Javascript Essential Training';
+// course.instructor = 'Morten';
+// course.level = 1;
+// course.published = true;
+// course.views = 0;
+
+let course = {
+  title: 'Javascript Essential Training',
+  instructor: 'Morten',
+  level: 1,
+  published: true,
+  views: 0,
+  updateViews: function() {
+    return ++course.views;
   }
-
-  console.log('logScope localVar: ', localVar); // 2
 }
+// console.log(course);
+// console.log(course.title);
 
-logScope();
+console.log(course.views);
+course.updateViews();
+console.log(course.views);
