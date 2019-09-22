@@ -1,24 +1,19 @@
-// let course = new Object();
+function Course(title, instructor, level, published, views) {
+  this.title = title;
+  this.instructor = instructor;
+  this.level = level;
+  this.published = published;
+  this.views = views;
+  this.updateViews = function() {
+    return ++this.views;
+  };
+};
 
-// course.title = 'Javascript Essential Training';
-// course.instructor = 'Morten';
-// course.level = 1;
-// course.published = true;
-// course.views = 0;
+let courses = [
+  new Course('Javascript Essential Training', 'Morton', 1, true, 0),
+  new Course('Up and Running with ECMAScript 6', 'Eve', 1, true, 123)
+]
 
-let course = {
-  title: 'Javascript Essential Training',
-  instructor: 'Morten',
-  level: 1,
-  published: true,
-  views: 0,
-  updateViews: function() {
-    return ++course.views;
-  }
-}
-// console.log(course);
-// console.log(course.title);
-
-console.log(course.views);
-course.updateViews();
-console.log(course.views);
+console.log(courses);
+console.log(courses[1].instructor);
+console.log(courses[0].updateViews());
