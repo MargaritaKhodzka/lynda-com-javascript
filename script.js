@@ -1,21 +1,15 @@
-const multiply = (a, b) => {
-  let result = a * b;
-  console.log(result);
-  return result;
-};
-let multiplied = multiply(3,4);
+const MYCONSTANT = 5;
+MYCONSTANT = 3; // TypeError
 
+function logScope() {
+  let localVar = 2;
+  if (localVar) {
+    // block scope
+    let localVar = "I'm different!";
+    console.log('nested localVar: ', localVar); // I'm different!
+  }
 
-const findBiggestFraction = (a, b) => {
-  let result;
-  a > b ? result = ['firstFraction', a] : result = ['secondFraction', b];
-  return result;
-};
+  console.log('logScope localVar: ', localVar); // 2
+}
 
-let firstFraction = 3/4;
-let secondFraction = 5/7;
-let fractionResult = findBiggestFraction(firstFraction, secondFraction);
-
-console.log('First fraction result: ', firstFraction);
-console.log('Second fraction result: ', secondFraction);
-console.log('Fraction ' + fractionResult[0] + ' with a value of ' + fractionResult[1] + ' is the biggest.');
+logScope();
