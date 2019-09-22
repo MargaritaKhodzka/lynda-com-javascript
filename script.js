@@ -1,19 +1,36 @@
-function Course(title, instructor, level, published, views) {
-  this.title = title;
-  this.instructor = instructor;
-  this.level = level;
-  this.published = published;
-  this.views = views;
-  this.updateViews = function() {
-    return ++this.views;
+const doSomeMath = () => {
+  let a = 5;
+  let b = 4;
+
+  const multiply = () => {
+    var result = a * b;
+    return result;
+  }
+
+  return multiply;
+}
+
+let theResult = doSomeMath();
+console.log('The result: ', theResult());
+
+
+
+const giveMeEms = pixels => {
+  let baseValue = 16;
+
+  const doTheMath = () => {
+    return pixels/baseValue;
   };
+
+  return doTheMath;
 };
 
-let courses = [
-  new Course('Javascript Essential Training', 'Morton', 1, true, 0),
-  new Course('Up and Running with ECMAScript 6', 'Eve', 1, true, 123)
-]
+let smallSize = giveMeEms(12);
+let mediumSize = giveMeEms(18);
+let largeSize = giveMeEms(24);
+let xlargeSize = giveMeEms(32);
 
-console.log(courses);
-console.log(courses[1].instructor);
-console.log(courses[0].updateViews());
+console.log('Small size: ', smallSize());
+console.log('Medium size: ', mediumSize());
+console.log('Large size: ', largeSize());
+console.log('Extra Large size: ', xlargeSize());
