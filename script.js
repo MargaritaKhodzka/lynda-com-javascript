@@ -1,36 +1,35 @@
-const doSomeMath = () => {
-  let a = 5;
-  let b = 4;
+const testWrapper = document.querySelector(".test-wrapper");
+const testArea = document.querySelector("#test-area");
+const originText = document.querySelector("#origin-text p").innerHTML;
+const resetButton = document.querySelector("#reset");
+const theTimer = document.querySelector(".timer");
 
-  const multiply = () => {
-    var result = a * b;
-    return result;
-  }
 
-  return multiply;
+// Add leading zero to numbers 9 or below (purely for aesthetics):
+
+
+// Run a standard minute/second/hundredths timer:
+
+
+// Match the text entered with the provided text on the page:
+
+spellCheck = () => {
+  let textEntered = testArea.value;
+  console.log(textEntered);
 }
 
-let theResult = doSomeMath();
-console.log('The result: ', theResult());
+// Start the timer:
+start = () => {
+  let textEnteredLength = testArea.value.length;
+  console.log(textEnteredLength);
+}
 
+// Reset everything:
+reset = () => {
+  console.log('reset button has been pressed');
+}
 
-
-const giveMeEms = pixels => {
-  let baseValue = 16;
-
-  const doTheMath = () => {
-    return pixels/baseValue;
-  };
-
-  return doTheMath;
-};
-
-let smallSize = giveMeEms(12);
-let mediumSize = giveMeEms(18);
-let largeSize = giveMeEms(24);
-let xlargeSize = giveMeEms(32);
-
-console.log('Small size: ', smallSize());
-console.log('Medium size: ', mediumSize());
-console.log('Large size: ', largeSize());
-console.log('Extra Large size: ', xlargeSize());
+// Event listeners for keyboard input and the reset button:
+testArea.addEventListener('keypress', start, false)
+testArea.addEventListener('keyup', spellCheck, false)
+resetButton.addEventListener('click', reset, false)
