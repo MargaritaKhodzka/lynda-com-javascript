@@ -1,0 +1,1 @@
+# lynda-typing-speed-tester
